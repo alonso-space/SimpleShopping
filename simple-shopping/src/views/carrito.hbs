@@ -1,0 +1,43 @@
+<h1>Tu carrito</h1>
+{{#if vacio}}
+  <p>El carrito está vacío. <a href="/">Ver productos</a></p>
+{{else}}
+  <table>
+    <tr><th></th><th>Producto</th><th>Precio</th><th>Cantidad</th><th>Subtotal</th></tr>
+    {{#each items}}
+    <tr>
+      <td><img src="/img/{{imagen}}" width="60" alt=""></td>
+      <td>{{nombre_prod}}</td>
+      <td>{{clp precio_venta}}</td>
+      <td>{{cantidad}}</td>
+      <td>{{clp subtotal}}</td>
+    </tr>
+    {{/each}}
+  </table>
+
+  <p>Total de productos: <b>{{unidades}}</b></p>
+  <p>Subtotal: {{clp subtotal}} | IVA: {{clp iva}} | <b>Total: {{clp total}}</b></p>
+
+  <form action="/finalizar" method="POST" class="finalizar">
+    <label>Cliente:
+      <select name="cliente_id" required>
+        <option value="">-- Selecciona --</option>
+        {{#each clientes}}
+        <option value="{{cliente_id}}">{{nombre}} {{apellido1}}</option>
+        {{/each}}
+      </select>
+    </label>
+    <label>Tipo de pago:
+      <select name="tipo_pago" required>
+        <option value="efectivo">Efectivo</option>
+        <option value="debito">Débito</option>
+        <option value="credito">Crédito</option>
+      </select>
+    </label>
+    <button class="btn btn-verde">Finalizar compra</button>
+  </form>
+
+  <form action="/vaciar" method="POST">
+    <button class="btn btn-rojo">Vaciar carrito</button>
+  </form>
+{{/if}}

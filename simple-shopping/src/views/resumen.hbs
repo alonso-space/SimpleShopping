@@ -1,0 +1,21 @@
+<h1>¡Compra realizada!</h1>
+<p>N° de serie: <b>{{compra.num_serie}}</b> · Cliente: {{compra.nombre}} {{compra.apellido1}} · Pago: {{compra.tipo_pago}}</p>
+
+<table>
+  <tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>Subtotal</th></tr>
+  {{#each items}}
+  <tr>
+    <td>{{nombre_prod}}</td>
+    <td>{{cantidad}}</td>
+    <td>{{clp precio}}</td>
+    <td>{{clp subtotal}}</td>
+  </tr>
+  {{/each}}
+</table>
+
+<p>Cantidad total de productos: <b>{{unidades}}</b></p>
+<p>Precio de los productos: {{clp subtotal}}</p>
+<p>Total IVA (19%): {{clp compra.iva}}</p>
+<p class="total">Total de la compra: {{clp compra.total_pagar}}</p>
+
+<a href="/" class="btn">Seguir comprando</a>

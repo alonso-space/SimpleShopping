@@ -1,0 +1,14 @@
+<h1>Productos</h1>
+<a href="/carrito" class="btn btn-verde" style="margin-bottom: 15px;">Finalizar compra</a>
+<div class="grid">
+  {{#each productos}}
+  <div class="card">
+    <img src="/img/{{imagen}}" alt="{{nombre_prod}}">
+    <h3>{{nombre_prod}}</h3>
+    <p class="precio">{{clp precio_venta}}</p>
+    <form action="/agregar/{{producto_id}}" method="POST">
+      <button class="btn">Agregar al carrito</button>
+    </form>
+  </div>
+  {{/each}}
+</div>

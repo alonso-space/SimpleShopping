@@ -1,0 +1,13 @@
+{
+  "name": "simple-shopping",
+  "version": "1.0.0",
+  "description": "Simple online store built with Node.js, Express, Handlebars and MySQL: product catalog, session-based cart and purchase summary with VAT.",
+  "main": "app.js",
+  "scripts": { "start": "node app.js" },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "hbs": "^4.2.0",
+    "mysql2": "^3.9.7"
+  }
+}
